@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1038317B25D4DDC00047D539 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1038317A25D4DDC00047D539 /* CoreDataManager.swift */; };
 		103831A625D4F6060047D539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103831A525D4F6050047D539 /* GoogleService-Info.plist */; };
+		103831B125D501390047D539 /* GraficaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103831B025D501390047D539 /* GraficaTableViewController.swift */; };
 		1091242825D49848008B9379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1091242725D49848008B9379 /* AppDelegate.swift */; };
 		1091242A25D49848008B9379 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1091242925D49848008B9379 /* SceneDelegate.swift */; };
 		1091242F25D49848008B9379 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1091242D25D49848008B9379 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		1038317A25D4DDC00047D539 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		103831A525D4F6050047D539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		103831B025D501390047D539 /* GraficaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaTableViewController.swift; sourceTree = "<group>"; };
 		1091242425D49848008B9379 /* ExameniOSBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExameniOSBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1091242725D49848008B9379 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1091242925D49848008B9379 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				1091246025D4B87D008B9379 /* OpcionesTableViewController.swift */,
-				103831A525D4F6050047D539 /* GoogleService-Info.plist */,
+				103831B025D501390047D539 /* GraficaTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -122,6 +124,7 @@
 			children = (
 				1091243325D4984A008B9379 /* Assets.xcassets */,
 				1091243825D4984A008B9379 /* Info.plist */,
+				103831A525D4F6050047D539 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -162,7 +165,7 @@
 				1091242025D49848008B9379 /* Sources */,
 				1091242125D49848008B9379 /* Frameworks */,
 				1091242225D49848008B9379 /* Resources */,
-				76A505B8BB3E6CA26F546713 /* [CP] Embed Pods Frameworks */,
+				7FDAE355D8D5CC3A6CF77D31 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,7 +223,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		76A505B8BB3E6CA26F546713 /* [CP] Embed Pods Frameworks */ = {
+		7FDAE355D8D5CC3A6CF77D31 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,6 +271,7 @@
 			files = (
 				1038317B25D4DDC00047D539 /* CoreDataManager.swift in Sources */,
 				1091243225D49848008B9379 /* ExameniOSBA.xcdatamodeld in Sources */,
+				103831B125D501390047D539 /* GraficaTableViewController.swift in Sources */,
 				1091242825D49848008B9379 /* AppDelegate.swift in Sources */,
 				1091242A25D49848008B9379 /* SceneDelegate.swift in Sources */,
 				1091245425D4AFD0008B9379 /* Petitions.swift in Sources */,
