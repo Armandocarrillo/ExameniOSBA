@@ -214,9 +214,11 @@ class OpcionesTableViewController: UITableViewController, UIImagePickerControlle
         
         
         manager.createUser(name: nameText) { [weak self] in
-        
+            
+           
             
         }
+     
       
         alert.addAction(okAction)
         

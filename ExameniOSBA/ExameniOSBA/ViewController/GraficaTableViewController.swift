@@ -14,7 +14,7 @@ class GraficaTableViewController: UITableViewController {
    
     
     var arrayQuestionText = [String]()
-    var arrayPercent = [String]()
+    var arrayColors = [String]()
     
 
     override func viewDidLoad() {
@@ -121,6 +121,10 @@ extension GraficaTableViewController {
             let myResult = try? JSON(data:myResponde.data!)
             //print(myResult)
             //print(myResult!["questions"])
+            print(myResult!["colors"])
+            
+            
+            
             let resultArray = myResult!["questions"]
             
             self.arrayQuestionText.removeAll()
