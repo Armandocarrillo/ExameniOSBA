@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FirebaseStorage
 
 class OpcionesTableViewController: UITableViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var fullNameTextField: UITextField!
@@ -17,6 +18,7 @@ class OpcionesTableViewController: UITableViewController, UIImagePickerControlle
     @IBOutlet weak var terminarButton: UIButton!
     
     private let manager = CoreDataManager()
+    private let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,21 +130,6 @@ class OpcionesTableViewController: UITableViewController, UIImagePickerControlle
     
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    /*
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        // Verify all the conditions
-        if let sdcTextField = textField as? SDCTextField {
-            return sdcTextField.verifyFields(shouldChangeCharactersIn: range, replacementString: string)
-        } else {
-            return false
-        }
-    
-    }*/
     
     @IBAction func cameraButton(_ sender: UIButton) {
         
@@ -176,11 +163,7 @@ class OpcionesTableViewController: UITableViewController, UIImagePickerControlle
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]){
-     /*
-        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            selfieImageView.image = selectedImage
-            dismiss(animated: true, completion: nil)
-        }*/
+   
         dismiss(animated: true, completion: nil)
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
@@ -191,6 +174,26 @@ class OpcionesTableViewController: UITableViewController, UIImagePickerControlle
         }
         
         //let ref = storage.child("image./file.png")
+        storage.child("image./nombreTextField.png").putData(imageData, metadata: nil, completion: { _, error in
+        guard error == nil else {
+            print("fallo de storage")
+            return
+        }
+            self.storage.child("image./nombreTextField.png").downloadURL(completion: {url, error in
+                guard let url = url, error == nil else {
+                    return
+                }
+                
+                let urlString = url.absoluteString
+                
+                DispatchQueue.main.async {
+                    self.selfieImageView.image = image
+                }
+                print("descarga de : \(urlString)")
+                UserDefaults.standard.set(urlString, forKey: "url")
+            })
+    })
+        
         
         
     }
