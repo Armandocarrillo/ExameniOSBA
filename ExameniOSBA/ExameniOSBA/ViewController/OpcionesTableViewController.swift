@@ -18,6 +18,8 @@ class OpcionesTableViewController: UITableViewController, UIImagePickerControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.keyboardDismissMode = .onDrag
+        
        
         
         guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
