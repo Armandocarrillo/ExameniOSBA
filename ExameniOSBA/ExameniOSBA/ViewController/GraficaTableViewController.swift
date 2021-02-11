@@ -126,7 +126,6 @@ extension GraficaTableViewController {
             
             
             let resultArray = myResult!["questions"]
-            
             self.arrayQuestionText.removeAll()
             for i in resultArray.arrayValue{
                 //print(i)
@@ -143,7 +142,7 @@ extension GraficaTableViewController {
             break
         }
     }
-            
+    
     }
     
     
