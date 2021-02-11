@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class OpcionesTableViewController: UITableViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var fullNameTextField: UITextField!
@@ -13,7 +14,9 @@ class OpcionesTableViewController: UITableViewController, UIImagePickerControlle
     @IBOutlet weak var selfieImageView: UIImageView!
     @IBOutlet weak var graficasLabel: UILabel!
     @IBOutlet weak var graficasTitulo: UILabel!
+    @IBOutlet weak var terminarButton: UIButton!
     
+    private let manager = CoreDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +58,7 @@ class OpcionesTableViewController: UITableViewController, UIImagePickerControlle
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 4
+        return 5
     }
 
     let checkInSelfieCellIndexPath = IndexPath(row: 2, section: 0)
@@ -192,7 +195,35 @@ class OpcionesTableViewController: UITableViewController, UIImagePickerControlle
         
     }
     
-   
+    @IBAction func guardarButton(_ sender: UIButton) {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.terminarButton.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
+            self.terminarButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            
+        }
+        
+        
+        
+            let alert = UIAlertController(title: "Se agrego nuevo elemento", message: " ", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            let nameText: String = fullNameTextField.text!
+        
+        
+        manager.createUser(name: nameText) { [weak self] in
+        
+            
+        }
+      
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
+        
+    }
+        
+        
+    }
+    
     
 
-}
+
